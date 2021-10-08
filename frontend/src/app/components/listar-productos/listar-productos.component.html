@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2"><!--offset leaves two columns to the left-->
+            <div class="card">
+                <div class="card-body text-left">
+                    <span class="titulo">LISTADO DE PRODUCTOS</span>
+                    <button class="btn btn-success float-end" routerLink = "/crear-producto">NUEVO</button> <!--float-end, what it does is move the object to the end of line o square -->
+                    <table class="table table-striped mt-5" *ngIf="listProductos.length>0">  <!--routerlink, used to render another component-->
+                        <thead>
+                          <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Ubicación</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                          <tr *ngFor="let producto of listProductos">
+                            <td>{{producto.nombre}}</td>
+                            <td>{{producto.categoria}}</td>
+                            <td>{{producto.ubicacion}}</td>
+                            <td>{{producto.precio | currency: 'USD'}}</td>
+                            <td>
+                                <i [routerLink]="['/editar-producto',producto._id]" class="fas fa-edit text-primary"></i>
+                                <i (click)="eliminarProducto(producto._id)" class="fas fa-trash text-danger"></i>
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                      <h5 style="text-align:start; margin-top: 10px;" *ngIf="listProductos.length == 0">No hay productos para mostrar</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
