@@ -8,7 +8,7 @@ import { Producto } from '../models/producto';
   providedIn: 'root'
 })
 export class ProductoService { //used for http requests
-  url = 'http://localhost:4000/api/productos/'
+  url = 'https://mean-crud-products.herokuapp.com/api/productos/'
   constructor(private http: HttpClient) {
 
 

@@ -4,7 +4,7 @@ const conectarDB = async () => {
 
     try {
         
-        await mongoose.connect('mongodb://localhost/meanCrud', {
+        await mongoose.connect('mongodb+srv://user:user123456@cruddb.hfs55.mongodb.net/crudDB?retryWrites=true&w=majority', {
 
             useNewUrlParser: true,
             useUnifiedTopology: true,

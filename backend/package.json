@@ -4,6 +4,7 @@
   "description": "crud de productos con mean",
   "main": "index.js",
   "scripts": {
+    "start": "node .",
     "dev": "nodemon ."
   },
   "author": "Diego Araya Chaves",

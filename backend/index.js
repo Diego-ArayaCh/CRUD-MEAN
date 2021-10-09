@@ -13,9 +13,9 @@ app.use(cors());
 app.use('/api/productos', require('./routes/producto'));
 
 
-app.listen(4000,() => {
+app.listen(process.env.PORT || 4000,() => {
 
 
-    console.log('The server is listening on port 4000')
+    console.log('The server is listening')
 
 });
